@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,12 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password)
             ]);
+
+            $user->ownedTeams()->save(Team::forceCreate([
+                'user_id' => $user->id,
+                'name' => explode(' ', $user->name, 2)[0]."'s Team",
+                'personal_team' => true,
+            ]));
 
             return response()->json([
                 'status' => true,
