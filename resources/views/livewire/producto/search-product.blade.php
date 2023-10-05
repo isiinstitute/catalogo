@@ -49,7 +49,9 @@
                                     {{ $item->marca->nombre }}</td>
                                 <td class="whitespace-nowrap px-6 py-4">{{ $item->titulo }}</td>
                                 <td class="whitespace-nowrap px-6 py-4">{{ $item->precio }}</td>
-                                <td class="whitespace-nowrap px-6 py-4">{{ $item->imagen }}</td>
+                                <td class="whitespace-nowrap px-6 py-4">
+                                    <img src="{{ $item->imagen }}" alt="" width="150px">
+                                </td>
                                 <td class="whitespace-nowrap px-6 py-4">{{ $item->user->name }}</td>
                                 <td class="whitespace-nowrap py-4">
                                     <x-warning-button>
