@@ -54,7 +54,7 @@ class CreateProduct extends Component
         $producto->marca_id = $this->marca_id;
         $producto->titulo = $this->titulo;
         $producto->precio = $this->precio;
-        $producto->imagen = $this->imagen->store('products');
+        $producto->imagen = $this->imagen->store('public' . DIRECTORY_SEPARATOR . 'products');
         $producto->user_id = auth()->user()->id;
         $producto->save();
 
