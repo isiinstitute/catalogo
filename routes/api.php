@@ -21,4 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post("/auth/register", [\App\Http\Controllers\Api\AuthController::class, 'create']);
 Route::post("/auth/login", [\App\Http\Controllers\Api\AuthController::class, 'login']);
 
-Route::apiResource('/products', \App\Http\Controllers\Api\ProductoController::class)->only('index');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::apiResource('/products', \App\Http\Controllers\Api\ProductoController::class)->only('index');
+});
