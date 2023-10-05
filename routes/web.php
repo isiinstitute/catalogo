@@ -25,7 +25,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+
+    Route::resource('/users', \App\Http\Controllers\UserController::class)->only('index', 'create');
 });
-
-

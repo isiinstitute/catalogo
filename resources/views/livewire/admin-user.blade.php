@@ -4,7 +4,6 @@
         <form wire:submit.prevent='buscar' autocomplete="off">
             <div class="border-gray-900/10 pb-2">
                 <div class="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-
                     <div class="sm:col-span-2 sm:col-start-1">
                         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Correo
                             electrónico</label>
@@ -24,7 +23,7 @@
                         <label class="block text-sm font-medium leading-6 text-gray-900">&nbsp;</label>
                         <div class="mt-2">
                             <x-button type="submit" id="btnBuscar">Buscar</x-button>
-                            <x-success-button id="btnNuevo">Registrar nuevo</x-success-button>
+                            <x-success-link href="{{ route('users.create') }}">Registrar nuevo</x-success-link>
                         </div>
                     </div>
                 </div>
@@ -40,7 +39,7 @@
                         <div class="mb-4">
                             <table class="min-w-full text-left text-sm font-light">
                                 <thead class="border-b font-medium dark:border-neutral-500">
-                                    <tr>
+                                    <tr class="uppercase">
                                         <th scope="col" class="px-6 py-4 text-center">#</th>
                                         <th scope="col" class="px-6 py-4 text-center">Nombre</th>
                                         <th scope="col" class="px-6 py-4 text-center">Email</th>
