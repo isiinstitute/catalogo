@@ -27,4 +27,5 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('/users', \App\Http\Controllers\UserController::class)->only('index', 'create');
+    Route::resource('/products', \App\Http\Controllers\ProductoController::class)->only('index', 'create');
 });

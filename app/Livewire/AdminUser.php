@@ -25,7 +25,7 @@ class AdminUser extends Component
             if (!empty($this->email)) {
                 $query->where('email', 'LIKE', '%' . $this->email . '%');
             }
-        })->paginate();
+        })->paginate(1);
         return view('livewire.admin-user', compact('users'));
     }
 

@@ -21,6 +21,12 @@
                     ])">
                         {{ __('Usuarios') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('products.index') }}" :active="in_array(\Illuminate\Support\Facades\Route::currentRouteName(), [
+                        'products.index',
+                        'products.create',
+                    ])">
+                        Productos
+                    </x-nav-link>
                 </div>
             </div>
 
