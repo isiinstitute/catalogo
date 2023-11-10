@@ -23,4 +23,6 @@ Route::post("/auth/login", [\App\Http\Controllers\Api\AuthController::class, 'lo
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/products', \App\Http\Controllers\Api\ProductoController::class);
+    Route::get('/categorias', [\App\Http\Controllers\Api\ProductoController::class, 'categorias']);
+    Route::get('/marcas', [\App\Http\Controllers\Api\ProductoController::class, 'marcas']);
 });
