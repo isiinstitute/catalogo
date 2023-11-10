@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CategoriaCollection;
+use App\Http\Resources\MarcaCollection;
 use App\Http\Resources\ProductCollection;
+use App\Models\Categoria;
+use App\Models\Marca;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -17,6 +21,16 @@ class ProductoController extends Controller
     public function index()
     {
         return new ProductCollection(Producto::all());
+    }
+
+    public function categorias()
+    {
+        return  new CategoriaCollection(Categoria::all());
+    }
+
+    public function marcas()
+    {
+        return  new MarcaCollection(Marca::all());
     }
 
     /**
