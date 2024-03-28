@@ -42,7 +42,7 @@ class ProductoController extends Controller
             'categoria_id' => 'required|exists:categorias,id',
             'marca_id' => 'required|exists:marcas,id',
             'titulo' => 'required|string',
-            'precio' => 'required|decimal:2',
+            'precio' => 'required',
             'imagen' => 'required|image',
         ]);
 

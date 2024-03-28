@@ -25,4 +25,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::apiResource('/products', \App\Http\Controllers\Api\ProductoController::class);
     Route::get('/categorias', [\App\Http\Controllers\Api\ProductoController::class, 'categorias']);
     Route::get('/marcas', [\App\Http\Controllers\Api\ProductoController::class, 'marcas']);
+    Route::post('/perfil/editar', [\App\Http\Controllers\Api\PerfilController::class, 'editar']);
 });
